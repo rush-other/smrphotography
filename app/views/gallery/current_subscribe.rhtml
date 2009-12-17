@@ -1,0 +1,31 @@
+<h1>
+    Email Updates
+</h1>
+<center>
+    <table>
+        <tr>
+            <td>
+                <div id="subscribe_message_div" name="subscribe_message_div"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Subscribe to email updates on my current project:
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <input type="text" id="inner_subscribe" name="inner_subscribe" class="drop_shadow" onkeydown="javascript:enter_subscription(event, 'current', 'subscribe_message_div');"/>
+            </td>
+            <td>
+                <a href="#" onclick="javascript:submit_subscription('current', 'subscribe_message_div');">
+                    <img src="/images/boxarrow.gif"/>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <%= link_to "Back to Current Projects", :action => "current", :format => "html" %>
+</center>

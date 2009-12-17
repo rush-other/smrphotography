@@ -1,0 +1,50 @@
+<%= javascript_include_tag "gallery" %>
+<div class="form_container">    
+    <% form_tag url_for(:action => "select_gallery") do %>
+        <table class="form_table">
+            <tr>
+                <td class="label password_width">
+                    Gallery:
+                </td>
+                <td class="value">
+                    <select name="gallery" onchange="javascript:check_secure(this);">
+                        <option/>
+                        <% @galleries.each do |gallery| %>
+                            <option value="<%= gallery.id %>" <%= gallery_selected(gallery) %>>
+                                <%= gallery.gallery_name %>
+                            </option>
+                        <% end %>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <div class="hidden" id="password_label">
+                        Password:
+                    </div>
+                </td>
+                <td class="value">
+                    <div class="hidden" id="password">
+                        <input type="password" name="password" class="gallery_password" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="label" colspan="2">
+                    <input type="submit" value="View Gallery" />
+                </td>
+            </tr>
+       </table>
+    <% end %>
+</div>
+<script type="text/javascript">
+    var secure_values = new Array();
+    <% @secure_ids.each_with_index do |id, index| %>
+        secure_values[<%=index%>] = <%=id%>;
+    <% end %>
+    //See if the selected gallery requires a password
+    <% if gallery_secured? %>
+        $("password_label").style.display = "block";
+		$("password").style.display = "block";
+    <% end %>
+</script>

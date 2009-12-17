@@ -1,0 +1,38 @@
+<% if @page_count > 1 %>
+    <div class="pagination_holder">
+        <% @page_count.times do |index| %>
+            <% if index == @page %>
+                <%= (index + 1) %>
+            <% else %>
+                <%= link_to (index + 1).to_s, {:action => "photo_log", :page => (index + 1)} %>
+            <% end %>
+        <% end %>
+    </div>
+<% end %>
+<table class="log_table">
+    <tr>
+        <td class="value" colspan="4">
+            <%= link_to "New Photo", :action => "photo_edit" %>
+        </td>
+    </tr>
+    <tr>
+        <th>Edit</th>
+        <th>Gallery</th>
+        <th>Shoot</th>
+        <th>Number</th>
+        <th>Delete</th>
+    </tr>
+    <% @photos.each do |photo| %>
+        <tr class="<%= odd_even %>">
+            <td>
+                <%= link_to "Edit", :action => 'photo_edit', :id => photo["id"] %>
+            </td>
+            <td><%= photo["gallery_name"] %></td>
+            <td><%= photo["shoot_name"] %></td>
+            <td><%= photo["number"] %></td>
+            <td>
+                <%= link_to "Delete", :action => 'photo_del', :id => photo["id"] %>
+            </td>
+        </tr>
+    <% end %>
+</table>

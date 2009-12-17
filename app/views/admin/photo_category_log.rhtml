@@ -1,0 +1,26 @@
+
+<table class="log_table">
+    <tr>
+        <td class="value" colspan="4">
+            <%= link_to "New Photo Category", :action => "photo_category_edit" %>
+        </td>
+    </tr>
+    <tr>
+        <th>Edit</th>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Delete</th>
+    </tr>
+    <% @photo_categories.each do |pc| %>
+        <tr class="<%= odd_even %>">
+            <td>
+                <%= link_to "Edit", :action => 'photo_category_edit', :id => pc.id %>
+            </td>
+            <td><%= pc.category_name%></td>
+            <td><%= pc.name %></td>
+            <td>
+                <%= link_to "Delete", :action => 'photo_category_del', :id => pc.id %>
+            </td>
+        </tr>
+    <% end %>
+</table>

@@ -1,0 +1,11 @@
+<% @gallery.shoots.each do |shoot| %>
+    <div class="link_container">
+        <%= link_to (
+            shoot.shoot_name, url_for (
+            :action => controller.action_name,
+            :client => @gallery.context,
+            :shoot => shoot.id 
+            ))
+        %>
+    </div>
+<% end %>

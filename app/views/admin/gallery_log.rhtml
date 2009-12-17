@@ -1,0 +1,26 @@
+
+<table class="log_table">
+    <tr>
+        <td class="value" colspan="4">
+            <%= link_to "New Gallery", :action => "gallery_edit" %>
+        </td>
+    </tr>
+    <tr>
+        <th>Edit</th>
+        <th>User</th>
+        <th>Gallery Name</th>
+        <th>Delete</th>
+    </tr>
+    <% @galleries.each do |gallery| %>
+        <tr class="<%= odd_even %>">
+            <td>
+                <%= link_to "Edit", :action => 'gallery_edit', :id => gallery.id %>
+            </td>
+            <td><%= gallery.user.username %></td>
+            <td><%= link_to gallery.gallery_name, "/galleries/" + gallery.context + ".html" %></td>
+            <td>
+                <%= link_to "Delete", :action => 'gallery_del', :id => gallery.id %>
+            </td>
+        </tr>
+    <% end %>
+</table>

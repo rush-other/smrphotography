@@ -1,0 +1,26 @@
+
+<table class="log_table">
+    <tr>
+        <td class="value" colspan="4">
+            <%= link_to "New Shoot", :action => "shoot_edit" %>
+        </td>
+    </tr>
+    <tr>
+        <th>Edit</th>
+        <th>Shoot Name</th>
+        <th>Gallery</th>
+        <th>Delete</th>
+    </tr>
+    <% @shoots.each do |shoot| %>
+        <tr class="<%= odd_even %>">
+            <td>
+                <%= link_to "Edit", :action => 'shoot_edit', :id => shoot.id %>
+            </td>
+            <td><%= shoot.shoot_name%></td>
+            <td><%= shoot.gallery.gallery_name %></td>
+            <td>
+                <%= link_to "Delete", :action => 'shoot_del', :id => shoot.id %>
+            </td>
+        </tr>
+    <% end %>
+</table>

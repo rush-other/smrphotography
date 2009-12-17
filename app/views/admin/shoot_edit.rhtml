@@ -1,0 +1,25 @@
+<% form_for :shoot, @shoot, :url => { :action => "shoot_update_or_create", :id => @shoot.id } do |f| %>
+    <table class="form_table">
+        <tr>
+            <td class="label">
+                Gallery:
+            </td>
+            <td class="value">
+                <%= select("shoot", "gallery_id", @galleries.collect {|g| [ g.gallery_name, g.id ] }, { :include_blank => true }) %>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">
+                Shoot Name:
+            </td>
+            <td class="value">
+                <%= f.text_field :shoot_name %>
+            </td>
+        </tr>
+        <tr>
+            <td class="label" colspan="2">
+                <input type="submit" value="Submit" />
+            </td>
+        </tr>
+   </table>
+<% end %>

@@ -1,0 +1,25 @@
+<% form_for :photo_category, @photo_category, :url => { :action => "photo_category_update_or_create", :id => @photo_category.id } do |f| %>
+    <table class="form_table">
+        <tr>
+            <td class="label">
+                Category:
+            </td>
+            <td class="value">
+                <%= select("photo_category", "category", PhotoCategory.CATEGORY_OPTIONS.collect {|o| [ o[:name], o[:id] ] }, { :include_blank => true }) %>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">
+                Name:
+            </td>
+            <td class="value">
+                <%= f.text_field :name %>
+            </td>
+        </tr>
+        <tr>
+            <td class="label" colspan="2">
+                <input type="submit" value="Submit" />
+            </td>
+        </tr>
+   </table>
+<% end %>

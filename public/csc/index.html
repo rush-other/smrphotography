@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link href="stylesheets/style.css" type="text/css" rel="stylesheet">
+	<title>Chinese Shao-Lin Center</title>
+	<script language="JavaScript">
+<!--
+// PRELOADING IMAGES
+if (document.images) {
+ img1_on =new Image();  img1_on.src ="images/tab_locations_roll.gif"; 
+ img1_off=new Image();  img1_off.src="images/tab_locations.gif"; 
+}
+
+if (document.images) {
+ img2_on =new Image();  img2_on.src ="images/tab_articles_roll.gif"; 
+ img2_off=new Image();  img2_off.src="images/tab_articles.gif"; 
+}
+
+if (document.images) {
+ img3_on =new Image();  img3_on.src ="images/tab_faq_roll.gif"; 
+ img3_off=new Image();  img3_off.src="images/tab_faq.gif"; 
+}
+
+function movr(k) {
+ if (document.images) 
+  eval('document.img'+k+'.src=img'+k+'_on.src');
+}
+
+function mout(k) {
+ if (document.images) 
+  eval('document.img'+k+'.src=img'+k+'_off.src');
+}
+
+function handleOver() {
+ if (document.images) 
+  document.imgName.src=img_on.src;
+}
+
+function handleOut() {
+ if (document.images) 
+  document.imgName.src=img_off.src;
+}
+
+//-->
+</script>
+</head>
+<body>
+	<div id="main">
+		<img class="logo" src="images/corner3.gif" width="290" height="301">
+		<img class="header" src="images/header.gif" width="500" height="39">
+		<!-- tab 1 -->
+		<a href="locations.html" 
+			onMouseOver="movr(1);return false;" 
+			onMouseOut="mout(1);return true;">
+			<img class=tab1 name=img1 width=100 height=26 border=0 src="images/tab_locations.gif"></a>
+		<!-- /tab 1 -->
+		<!-- tab 2 -->
+		<a href="articles.html" 
+			onMouseOver="movr(2);return false;" 
+			onMouseOut="mout(2);return true;">
+			<img class=tab2 name=img2 width=100 height=26 border=0 src="images/tab_articles.gif"></a>
+		<!-- /tab 2 -->
+		<!-- tab 3 -->
+		<a href="articles.html" 
+			onMouseOver="movr(3);return false;" 
+			onMouseOut="mout(3);return true;">
+			<img class=tab3 name=img3 width=100 height=26 border=0 src="images/tab_faq.gif"></a>
+		<!-- /tab 3 -->
+		</div><!-- main -->
+</body>
+</html>

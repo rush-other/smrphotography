@@ -1,0 +1,60 @@
+<center><h1>Current Project</h1></center>
+<div class="paragraph">
+<p class="justified">
+My current project is a portrait book featuring vegans.  My goal in this creative endeavour is to show the diversity in our vegan community and to reveal a bit about each individual vegan through dialogue and thoughtful portraiture.
+</p>
+<p class="justified">
+Portrait of a Vegan is currently moving from Portland to Los Angeles.  Photo shoots in the Los Angeles area will begin in Summer 2008.
+</p>
+<center><b>Project FAQ</b></center>
+<p class="justified">
+1.	<b>I am a vegan interested in participating.  What do I need to do?</b>
+</p>
+<p class="justified">
+<%=link_to "Contact me", :action=> "contact", :format=> "html" %> so we can figure out the when and where for your portrait to be taken, and fill out a questionnaire sometime before we meet.  That's it!
+</p>
+<p class="justified">
+2.  <b>Where and when will my portrait be taken?</b>
+</p>
+<p class="justified">
+I'm interested in showing you in the location that you feel is your "natural habitat" - where you feel the most you.  This can be your home, your work, your gym, or at a location where you do a favorite activity (hiking, skiing, surfing, writing, drinking coffee, etc.)</br>
+</br>
+The location is completely up to you and we'll work together to schedule a date and time.
+</p>
+<p class="justified">
+3.  <b>What should I wear?</b>
+</p>
+<p class="justified">
+Wear whatever you think says "You."  Please don't dress up in your special occasion clothes - Remember, I am interested in showing you in your "natural habitat."
+</p>
+<p class="justified">
+4.  <b>What information will I need to provide?</b>
+</p>
+<p class="justified">
+The questionnaire has several questions and will be provided to you well before your portrait is taken (via email or snail mail) so you can complete it at your leisure.</br>
+</br>
+Feel free to skip the questions you don't feel like answering, but I hope you will respond with wonderfully insightful comments to at least a few - it will make for a much more interesting book!
+</p>
+<p class="justified">
+5.  <b>Will this book be published and made available for purchase?</b>
+</p>
+<p class="justified">
+Yes!  And a percentage of the proceeds will go to an organization that works on behalf of animals.  Details to be announced.  Check back here or sign up for <%= link_to "email updates", :action=> "current_subscribe", :format=>"html"%>.
+</p>
+<p class="justified">
+6.  <b>How can I stay updated on the project's progress?</b>
+</p>
+<p class="justified">
+If you subscribe to the project's <%= link_to "email updates", :action=> "current_subscribe", :format=>"html"%> you'll receive infrequent updates on the project's progress, including publish dates and special events.<br/><br/>You can also subscribe to <%= link_to "the blog", :action=> "blog"%> to stay up to date on Portrait of a Vegan and other goings on at SMR Photography.
+</p>
+<p class="justified">
+7.  <b>Are <i>you</i> vegan?</b>
+</p>
+<p class="justified">
+Yes!  I'm proud to say I've been vegan for 6 years (as of May 2008), and was vegetarian for 9 years before that.
+</p>
+8.  <b>I have a question not covered here.  Can I ask it?</b>
+</p>
+<p>
+Absolutely!  Contact me at  <a href="mailto:shannon@shannonmrush.com">shannon@shannonmrush.com</a> or 503-997-5045.
+</p>

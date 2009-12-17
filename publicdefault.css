@@ -1,0 +1,267 @@
+/* Global Elements */
+html {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 9pt;
+	margin: 0px;
+}
+body {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #FFF;
+	background-color: #000;
+	margin: 0px;
+}
+
+h1 {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	color: #FFF;
+	font-size: 14pt;
+	text-align: center;
+}
+
+p.justified {
+	text-align: justify;
+}
+
+p.content {
+	text-align: left;
+	margin-left: 70px;
+	margin-right: 70px;
+}
+
+a {
+	color: #CCC;
+	text-decoration: none;
+}
+
+a img {
+	border: none;
+}
+
+img.padded {
+	margin-left: 15px;
+}
+
+input.drop_shadow {
+	height:25px;
+	border: none;
+	width: 170px;
+	font-size: 10pt;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	background-image: url(../images/boxgrad.gif);
+	background-repeat: repeat-x;
+}
+input.gallery_password {
+	width: 100%;	
+}
+
+select.qty {
+	width: 60px;
+}
+/* Tables */
+/* Main Frame Table */
+table.main_frame {
+	border-collapse: collapse;
+	padding: 0px;
+}
+
+table.main_frame td.main_nav {
+	
+}
+
+table.main_frame td.sidebar {
+	vertical-align: top;
+}
+
+table.main_frame td.body {
+	width: 615px;
+	text-align: center;
+}
+table.main_frame td.admin_body {
+	width: 615px;
+	padding-left: 70px;
+	padding-top: 30px;
+	text-align: center;
+}
+
+/* Nav Links Table */
+table.nav_links {
+	border-collapse: collapse;
+	border: none;
+	background-image: url(../images/topbargradient.gif);
+	background-repeat: repeat-x;
+}
+
+table.nav_links td {
+	padding: 0px;
+	vertical-align: top;
+}
+
+table.nav_links td.padded {
+	padding: 10px;
+}
+
+/* Nav Buttons Table */
+table.nav_buttons {
+	width: 100%;
+}
+
+table.nav_buttons td.prev {
+	text-align: right;
+	width: 35%;
+}
+
+table.nav_buttons td.next {
+	text-align: left;
+	width: 35%;
+}
+
+table.nav_buttons td.start_stop {
+	text-align: center;
+	width: 30%;
+}
+
+/* Log Table from the Admin modules */
+table.log_table {
+	border: solid 1px #AAA;
+	border-collapse: collapse;
+}
+
+table.log_table th {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border: solid 1px #AAA;
+	background-color: #777;
+}
+
+table.log_table td {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border: solid 1px #AAA;
+}
+
+table.log_table tr.odd {
+	background-color: #444;
+}
+
+table.log_table tr.even {
+	
+}
+
+/* Form Table */
+table.form_table {
+	
+}
+
+table.form_table td {
+}
+
+table.form_table th {
+	text-align: left;
+}
+
+table.form_table td.label {
+	text-align: right;
+}
+
+table.form_table td.value {
+	text-align: left;	
+}
+
+table.form_table td.password_width {
+	width: 80px;
+}
+
+table.form_table td.padded {
+	padding-bottom: 20px;
+}
+
+table.form_table td.footer {
+	text-align: center;
+}
+
+
+/* Divs */
+div.slideshow_div {
+	/* ****************************************
+		Note: horizontal pics are 400 x 600, 
+		and vertical pics are 450 x 300
+	***************************************** */
+	width: 600px;
+	height: 500px;
+	text-align: center;
+}
+div.slide_container {
+}
+div.logo_div {
+	
+}
+
+div.sidebar_div {
+	height: 340px;
+}
+
+div.subscribe_div {
+	font-size: 6.5pt;
+}
+
+div.contact {
+	font-size: 7pt;
+}
+
+div.messages {
+	width: 100%;
+	text-align: left;
+	color: #FF0000;
+}
+div.success_messages {
+	width: 100%;
+	text-align: left;
+	color: #0000FF;
+}
+div.form_container {
+	text-align: center;
+	vertical-align: top;
+	padding-top: 50px;
+	height: 100%;
+	padding-left: 170px;
+	padding-right: 170px;
+}
+
+div.hidden {
+	display: none;
+}
+
+div.link_container {
+	padding-bottom: 5px;
+}
+div.paragraph {
+	height: 100%;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+div.padded {
+	padding-top: 50px;
+	padding-left: 150px;
+}
+
+div.pagination_holder {
+	text-align: left;
+}
+div.blogimage {
+	border: 3pt;
+	border-color: #cccccc; 
+}
+
+/* Spans */
+span.h2 {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 11pt;
+	font-weight: bold;
+	color: #FFF;
+}

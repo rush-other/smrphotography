@@ -1,0 +1,45 @@
+<% form_for :photo, @photo, :url => { :action => @url_action, :id => @photo.id }, :html => { :multipart => true } do |f| %>
+    <table class="form_table">
+        <tr>
+            <td class="label">
+                Shoot:
+            </td>
+            <td class="value">
+                <%= select("photo", "shoot_id", @shoots.collect {|s| [ s.shoot_name_with_user, s.id ] }, { :include_blank => true }) %>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">
+                Category:
+            </td>
+            <td class="value">
+                <%= select("photo", "photo_category_id", @photo_categories.collect {|pc| [ pc.name, pc.id ] }, { :include_blank => true }) %>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Upload File(s):
+            </td>
+        </tr>
+        <% if params[:id].blank? %>
+            <% 10.times do |num|%>
+                <tr>
+                    <td colspan="2">
+                        <%= file_field_tag "temp_photo" + num.to_s %> <%= check_box_tag "show_on_home" + num.to_s %> Show on home page?
+                    </td>
+                </tr>
+            <% end %>
+        <% else %>
+            <tr>
+                <td colspan="2">
+                    <%= file_field_tag :temp_photo %> <%= check_box :photo, :show_on_home %> Show on home page?
+                </td>
+            </tr>
+        <% end %>
+        <tr>
+            <td class="label" colspan="2">
+                <input type="submit" value="Submit" />
+            </td>
+        </tr>
+   </table>
+<% end %>

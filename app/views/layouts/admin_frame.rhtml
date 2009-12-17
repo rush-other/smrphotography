@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <link href="/stylesheets/default.css?<%=css_time_stamp%>" type="text/css" rel="stylesheet"></link>
+        <%= javascript_include_tag 'application' %>
+        <%= javascript_include_tag 'prototype' %>
+		<title>
+			<%= page_title %>
+    	</title>
+	</head>
+	<body>
+        <table class="main_frame">
+            <tr>
+                <td class="main_nav" colspan="2">
+                    <table >
+                        <tr>
+                            <td class="padded">
+                                <a href="/admin/photo_log.html">Photos</a>
+                            </td>
+                            <td class="padded">|</td>
+                            <td class="padded">
+                                <%= link_to "Users", :action => 'user_log' %>
+                            </td>
+                            <td class="padded">|</td>
+                            <td class="padded">
+                                <%= link_to "Galleries", :action => 'gallery_log' %>
+                            </td>
+                            <td class="padded">|</td>
+                            <td class="padded">
+                                <%= link_to "Shoots", :action => 'shoot_log' %>
+                            </td>
+                            <td class="padded">|</td>
+                            <td class="padded">
+                                <%= link_to "Photo Categories", :action => 'photo_category_log' %>
+                            </td>
+                            <td class="padded">|</td>
+                            <td class="padded">
+                                <%= link_to "Logout", :controller => 'secure', :action => 'logout' %>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="admin_body">
+                    <% if not flash[:messages].blank? %>
+                        <div class="messages">
+                            <ul>
+                                <% flash[:messages].each do |msg| %>
+                                    <li><%= msg %></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    <% end %>
+                    <%= yield %>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

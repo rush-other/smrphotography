@@ -1,0 +1,26 @@
+
+<table class="log_table">
+    <tr>
+        <td class="value" colspan="4">
+            <%= link_to "New User", :action => "user_edit" %>
+        </td>
+    </tr>
+    <tr>
+        <th>Edit</th>
+        <th>User Name</th>
+        <th>Role</th>
+        <th>Delete</th>
+    </tr>
+    <% @users.each do |user| %>
+        <tr class="<%= odd_even %>">
+            <td>
+                <%= link_to "Edit", :action => 'user_edit', :id => user.id %>
+            </td>
+            <td><%= user.username %></td>
+            <td><%= user.role.name %></td>
+            <td>
+                <%= link_to "Delete", :action => 'user_del', :id => user.id %>
+            </td>
+        </tr>
+    <% end %>
+</table>

@@ -1,0 +1,206 @@
+<% if @photo.nil? %>
+    <div class="slideshow_div">
+        <br/>
+        <br/>
+        Sorry, there was no photo selected to order. Please
+        <br/>
+        return to the 
+        <%= link_to "galleries", :action => "client_galleries", :format => "html" %>
+        to choose a photo.
+    </div>
+<% else %>
+    <div class="slideshow_div">
+        <img src="<%= url_for :action => 'home_image', :id => @photo.id %>" alt="<%= @photo.number %>" oncontextmenu="javascript:return nosaveas('<%=@msg%>');"/>
+    </div>
+    <center>
+        <br/>
+        <table class="form_table">
+            <tr>
+                <th colspan="4">
+                    Prints:
+                </th>
+            <tr>
+                <td>
+                    Wallets (Set of 4)
+                </td>
+                <td> $10 </td>
+                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <td>
+                        <select name="quantity" class="qty">
+                            <% 100.times do |index| %>
+                                <option value="<%=index+1%>"><%=index+1%></option>
+                            <% end %>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="image" src="/images/cart.gif" name="submit" alt="Add to cart" align="bottom">
+                        <input type="hidden" name="add" value="1"> 
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="business" value="shannon@shannonmrush.com ">
+                        <input type="hidden" name="item_name" value="<%= @photo_desc %> - Wallets (Set of 4)">
+                        <input type="hidden" name="amount" value="10.00">
+                        <input type="hidden" name="no_shipping" value="0">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="lc" value="US">
+                        <input type="hidden" name="bn" value="PP-ShopCartBF">
+                    </td>
+                </form>
+            </tr>
+            <tr>
+                <td>
+                    4&quot; x 6&quot;
+                </td>
+                <td> $15 </td>
+                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <td>
+                        <select name="quantity" class="qty">
+                            <% 100.times do |index| %>
+                                <option value="<%=index+1%>"><%=index+1%></option>
+                            <% end %>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="image" src="/images/cart.gif" name="submit" alt="Add to cart" align="bottom">
+                        <input type="hidden" name="add" value="1"> 
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="business" value="shannon@shannonmrush.com ">
+                        <input type="hidden" name="item_name" value="<%= @photo_desc %> - 4&quot; x 6&quot; print">
+                        <input type="hidden" name="amount" value="15.00">
+                        <input type="hidden" name="no_shipping" value="0">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="lc" value="US">
+                        <input type="hidden" name="bn" value="PP-ShopCartBF">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    5&quot; x 7&quot;
+                </td>
+                <td> $25 </td>
+                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <td>
+                        <select name="quantity" class="qty">
+                            <% 100.times do |index| %>
+                                <option value="<%=index+1%>"><%=index+1%></option>
+                            <% end %>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="image" src="/images/cart.gif" name="submit" alt="Add to cart" align="bottom">
+                        <input type="hidden" name="add" value="1"> 
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="business" value="shannon@shannonmrush.com ">
+                        <input type="hidden" name="item_name" value="<%= @photo_desc %> - 5&quot; x 7&quot; print">
+                        <input type="hidden" name="amount" value="25.00">
+                        <input type="hidden" name="no_shipping" value="0">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="lc" value="US">
+                        <input type="hidden" name="bn" value="PP-ShopCartBF">
+                    </td>
+                </form>
+            </tr>
+            <tr>
+                <td>
+                    8&quot; x 10&quot;
+                </td>
+                <td> $35 </td>
+                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <td>
+                        <select name="quantity" class="qty">
+                            <% 100.times do |index| %>
+                                <option value="<%=index+1%>"><%=index+1%></option>
+                            <% end %>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="image" src="/images/cart.gif" name="submit" alt="Add to cart" align="bottom">
+                        <input type="hidden" name="add" value="1"> 
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="business" value="shannon@shannonmrush.com ">
+                        <input type="hidden" name="item_name" value="<%= @photo_desc %> - 8&quot; x 10&quot; print">
+                        <input type="hidden" name="amount" value="35.00">
+                        <input type="hidden" name="no_shipping" value="0">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="lc" value="US">
+                        <input type="hidden" name="bn" value="PP-ShopCartBF">
+                    </td>
+                </form>
+            </tr>
+            <tr><td colspan="4">(Other sizes available, <%= link_to "contact me", :action => "contact", :format => "html" %> for pricing)</td></tr>
+            <tr><td colspan="4">&nbsp;</td></tr>
+            <tr><th colspan="4"><%=link_to "Greeting Cards", :action=> "cards", :format=> "html" %>:</th>
+             <tr>
+                <td>
+                    4" x 8" Cards (Set of 10 with envelopes)
+                </td>
+                <td> $15 </td>
+                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <td>
+                        <select name="quantity" class="qty">
+                            <% 100.times do |index| %>
+                                <option value="<%=index+1%>"><%=index+1%></option>
+                            <% end %>
+                        </select>
+                        
+                    </td>
+                    <td>
+                    <input type="image" src="/images/cart.gif" name="submit" alt="Add to cart" align="bottom">
+                        <input type="hidden" name="add" value="1"> 
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="business" value="shannon@shannonmrush.com ">
+                        <input type="hidden" name="item_name" value="<%= @photo_desc %> - 4x8 Cards (Set of 10)">
+                        <input type="hidden" name="amount" value="15.00">
+                        <input type="hidden" name="no_shipping" value="0">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="lc" value="US">
+                        <input type="hidden" name="bn" value="PP-ShopCartBF">
+                        </td>
+             </tr>
+             
+              
+            
+             <tr>
+                    <td>
+                    <table>
+                    <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="hidden" name="on0" value="Card Style">Choose <%=link_to "Card Style", :action=> "cards", :format=> "html" %></td><td><select name="os0"><option value="Modern Holiday">Modern Holiday<option value="Blue Winter">Blue Winter<option value="Christmas Graffiti">Christmas Graffiti<option value="Holiday Gift">Holiday Gift<option value="Christmas Lights">Christmas Lights<option value="Holiday Stripes">Holiday Stripes<option value="Minimal Christmas">Minimal Christmas<option value="Red Snowflakes">Red Snowflakes</select></td>
+                    </tr>
+                    <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="hidden" name="on1" value="Names To Be Printed">Names To Be Printed</td><td><input type="text" name="os1" maxlength="60"></td>
+                    </tr>
+                    </table>
+                    </td>
+                </form>
+            </tr>
+                <td class="footer" colspan="4">
+                    <table>
+                        <tr>
+                            <td>
+                                <form>
+                                    <%= link_to image_tag('continue.gif'), :action => 'client_gallery', :client => @photo.shoot.gallery.context, :shoot => @photo.shoot.id%>
+                                </form>
+                            </td>
+                            <td>
+                                <form target="paypal" action=" https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="business" value=" shannon@shannonmrush.com">
+                                    <input type="hidden" name="display" value="1">
+                                    <input type="image" src="/images/viewcart.gif" border="0" name="submit" alt="Checkout">
+                                </form>
+                            </td>
+                            <td>
+                                <form target="paypal" action=" https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="business" value=" shannon@shannonmrush.com">
+                                    <input type="hidden" name="display" value="1">
+                                    <input type="image" src="/images/checkout.gif" border="0" name="submit" alt="Checkout">
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </center>
+<% end %>

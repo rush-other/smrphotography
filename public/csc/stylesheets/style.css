@@ -1,0 +1,156 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Verdana, Garamond, Arial, sans-serif;
+	color: #ffffff;
+	font-size: 12px;
+	background-color: #000000;
+	background-image: url(../images/headerbg.gif);
+	background-repeat: repeat-x;
+	height: 100%;
+	}
+a:link, a:visited {
+	color: #ffffff;
+}
+a:hover {
+	color: #FFFC03;
+}
+a:active {
+	color: #EB0303;
+}
+#main {
+}
+
+.header {
+	position: absolute; top: 30px; left: 250px;
+	border: 0;
+}
+.tab1 {
+	position: absolute; top: 84px; right: 200px;
+}
+.tab2 {
+	position: absolute; top: 84px; right: 100px;
+}
+.tab3 {
+	position: absolute; top: 84px; right: 0;
+}
+
+/* location map */
+.usa_map {
+	position: absolute; top: 150px; left: 350px;
+	border: 2px solid #ffffff;
+}
+.ireland_map {
+	position: absolute; top: 235px; left: 770px;
+	border: 2px solid #ffffff;
+}
+.marker_cork {
+	position: absolute; top: 402px; left: 855px;
+	border: none;
+}
+.marker_portland {
+	position: absolute; top: 187px; left: 397px;
+	border: none;
+}
+.marker_phoenix {
+	position: absolute; top: 320px; left: 450px;
+	border: none;
+}
+.marker_tempe {
+	position: absolute; top: 320px; left: 455px;
+	border: none;
+}
+.marker_tucson {
+	position: absolute; top: 330px; left: 455px;
+	border: none;
+}
+.marker_los_angeles {
+	position: absolute; top: 300px; left: 395px;
+	border: none;
+}
+.marker_san_jose {
+	position: absolute; top: 270px; left: 380px;
+	border: none;
+}
+.marker_boulder {
+	position: absolute; top: 265px; left: 505px;
+	border: none;
+}
+.marker_cu_boulder {
+	position: absolute; top: 265px; left: 510px;
+	border: none;
+}
+.marker_denver {
+	position: absolute; top: 275px; left: 510px;
+	border: none;
+}
+.marker_university_denver {
+	position: absolute; top: 276px; left: 505px;
+	border: none;
+}
+.marker_colorado_springs {
+	position: absolute; top: 285px; left: 510px;
+	border: none;
+}
+.marker_boise {
+	position: absolute; top: 220px; left: 442px;
+	border: none;
+}
+.marker_university_boise {
+	position: absolute; top: 220px; left: 437px;
+	border: none;
+}
+.marker_caldwell {
+	position: absolute; top: 212px; left: 435px;
+	border: none;
+}
+.marker_emmett {
+	position: absolute; top: 207px; left: 437px;
+	border: none;
+}
+.marker_las_vegas {
+	position: absolute; top: 285px; left: 430px;
+	border: none;
+}
+.marker_albuquerque {
+	position: absolute; top: 310px; left: 495px;
+	border: none;
+}
+.marker_new_york {
+	position: absolute; top: 240px; left: 735px;
+	border: none;
+}
+.marker_salt_lake {
+	position: absolute; top: 250px; left: 460px;
+	border: none;
+}
+.marker_seattle {
+	position: absolute; top: 170px; left: 407px;
+	border: none;
+}
+h1.locations_title {
+	position: absolute; top: 470px; left: 425px;
+}
+h2.countries {
+	padding-top: 10px;
+}
+p.locations_list {
+	padding-left: 40px;
+}
+#schools_list {
+	position: absolute; top: 500px; left: 350px;
+	padding-bottom: 20px;
+}
+h3.state_title {
+	padding-left: 80px;
+	padding-top: 10px;
+}
+ul.school_links li {
+	margin-left: 100px;
+	list-style-image: url(../images/yellow_bullet.gif);
+}
+ul.school_links {
+	padding-top: 10px;
+}

@@ -1,0 +1,41 @@
+<% form_for :gallery, @gallery, :url => { :action => "gallery_update_or_create", :id => @gallery.id } do |f| %>
+    <table class="form_table">
+        <tr>
+            <td class="label">
+                User:
+            </td>
+            <td class="value">
+                <%= select("gallery", "user_id", @users.collect {|u| [ u.username, u.id ] }, { :include_blank => true }) %>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">
+                Gallery Name:
+            </td>
+            <td class="value">
+                <%= f.text_field :gallery_name %>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">
+                URL context:
+            </td>
+            <td class="value">
+                <%= f.text_field :context %>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">
+                Password:
+            </td>
+            <td class="value">
+                <%= f.password_field :password %>
+            </td>
+        </tr>
+        <tr>
+            <td class="label" colspan="2">
+                <input type="submit" value="Submit" />
+            </td>
+        </tr>
+   </table>
+<% end %>

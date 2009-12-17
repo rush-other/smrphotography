@@ -1,0 +1,132 @@
+<div class="slideshow_div">
+    <div class="slide_container"  id="slide_container" name="slide_container"></div>
+</div>
+<br/>
+<table class="nav_buttons">
+    <tr>
+        <td class="prev">
+            <a href="#">
+                <img src="/images/previous.gif" 
+                    onmouseover="javascript:img_hover(this, 'previousroll.gif');" 
+                    onmouseout="javascript:img_hover(this, 'previous.gif');"
+                    onclick="javascript:prev_slide(true); return false;"
+                />
+            </a>
+        </td>
+        <td class="start_stop">
+            <% if auto %>
+                <a href="#">
+                    <img src="/images/pausebutton.gif" onclick="javascript:pause_slide(this);"/>
+                </a>
+            <% else %>
+                <a href="#">
+                    <img src="/images/order.gif" onclick="javascript:goto_order();"/>
+                </a>
+            <% end %>
+        </td>
+        <td class="next">
+            <a href="#">
+                <img src="/images/next.gif" 
+                    onmouseover="javascript:img_hover(this, 'nextroll.gif');" 
+                    onmouseout="javascript:img_hover(this, 'next.gif');"
+                    onclick="javascript:next_slide(true); return false;"
+                />
+            </a>
+        </td>
+    </tr>
+    <% if not (auto || session[:client_gallery].blank? || session[:client_gallery].empty?) %>
+        <tr><td colspan="3">&nbsp;</td></tr>
+        <tr>
+            <td class="start_stop" colspan="3">
+                <select name="photo_counter" id="photo_counter" onchange="javascript:update_slide_by_number(this);">
+                    <% session[:client_gallery].each do |photo| %>
+                        <option value="<%= photo['number'] %>">
+                            <%= photo['number'] %>
+                        </option>
+                    <% end %>
+                </select>
+                &nbsp;&nbsp;of
+                <%= session[:client_gallery].last['number'] %>
+            </td>
+        </tr>
+    <% end %>
+</table>
+
+<script type="text/javascript">
+    //<![CDATA[
+        function update_slide(next) {
+            fade_slide();
+            new Ajax.Updater('slide_container', '<%= context %>?next=' + next, {onComplete:show_slide()});
+        }
+        function update_slide_by_number(component) {
+            if (component) {
+                var number = component.options[component.selectedIndex].value;
+                fade_slide();
+                new Ajax.Updater('slide_container', '<%= context %>?number=' + number, {onComplete:show_slide()});
+            }
+        }
+        function fade_slide() {
+            new Effect.Fade($('slide_container'), {duration:0.2, asynchronous:false});
+        }
+        function show_slide() {
+            window.setTimeout('Effect.Appear(\'slide_container\', {duration:.3, onComplete:update_photo_counter()})',750);
+        }
+        function next_slide(reset_timer) {
+            update_slide(true);
+            //Reset the period executer
+            if (reset_timer && running) {
+                executer.stop();
+                executer = new PeriodicalExecuter(next_slide, 5);
+            }
+        }
+        function prev_slide(reset_timer) {
+            update_slide(false);
+            if (reset_timer && running) {
+                //Reset the period executer
+                executer.stop();
+                executer = new PeriodicalExecuter(next_slide, 5);
+            }
+        }
+        function pause_slide(image) {
+            if (running) {
+                //Slide show is running, pause it
+                executer.stop();
+                running = false;
+                image.src = '/images/playbutton.gif';
+                img.alt = 'Play';
+            } else {
+                //Slide show is paused, start it up again
+                update_slide(true);
+                executer.stop();
+                executer = new PeriodicalExecuter(next_slide, 5);
+                running = true;
+                image.src = '/images/pausebutton.gif';
+                img.alt = 'Pause';
+            }
+        }
+        function goto_order() {
+            order_page = "<%= absolute_link('gallery/order.html') %>";
+            order_page += "?id=" + $('photo_id').value;
+            window.location = order_page;
+        }
+        function update_photo_counter() {
+            <% if not auto %>
+                //Update the photo_counter
+                for (var i = 0; i < $('photo_counter').options.length; ++i) {
+                    if ($('photo_counter').options[i].value == $('photo_number').value) {
+                        $('photo_counter').selectedIndex = i;
+                        return;
+                    }
+                }
+            <% end %>
+        }
+        update_slide(true);
+        //Data
+        <% if auto %>
+            var executer = new PeriodicalExecuter(next_slide, 5);
+            var running = true;
+        <% else %>
+            var running = false;
+        <% end %>
+    //]]>
+</script>
